@@ -649,9 +649,14 @@ S.setDimensions = function(height, width, maxHeight, maxWidth, topBottom, leftRi
         }
     }
 
+    // ROBW 08-JUN-2010
+    // Calculate border width and remove that from overall width
+    var bwidth = parseInt(getComputedStyle(wrapper, null).getPropertyValue('border-left-width')) + parseInt(getComputedStyle(wrapper,null).getPropertyValue('border-right-width'));
+    var bheight = parseInt(getComputedStyle(wrapper, null).getPropertyValue('border-top-width')) + parseInt(getComputedStyle(wrapper,null).getPropertyValue('border-bottom-width'));    
+
     S.dimensions = {
-        height:         height + topBottom,
-        width:          width + leftRight,
+        height:         height + topBottom + parseInt(bheight),
+        width:          width + leftRight + parseInt(bwidth),
         innerHeight:    height,
         innerWidth:     width,
         top:            Math.floor((maxHeight - (height + extraHeight)) / 2 + padding),
