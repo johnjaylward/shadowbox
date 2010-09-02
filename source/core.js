@@ -14,7 +14,7 @@ var S = {
      */
     version: "3.0.3"
 
-}
+};
 
 var ua = navigator.userAgent.toLowerCase();
 
@@ -115,7 +115,7 @@ S.dimensions = null;
  */
 S.ease = function(state) {
     return 1 + Math.pow(state - 1, 3);
-}
+};
 
 /**
  * An object containing names of plugins and links to their respective download pages.
@@ -344,7 +344,7 @@ S.options = {
  */
 S.getCurrent = function() {
     return S.current > -1 ? S.gallery[S.current] : null;
-}
+};
 
 /**
  * Returns true if there is another object to display after the current.
@@ -354,7 +354,7 @@ S.getCurrent = function() {
  */
 S.hasNext = function() {
     return S.gallery.length > 1 && (S.current != S.gallery.length - 1 || S.options.continuous);
-}
+};
 
 /**
  * Returns true if Shadowbox is currently open.
@@ -364,7 +364,7 @@ S.hasNext = function() {
  */
 S.isOpen = function() {
     return open;
-}
+};
 
 /**
  * Returns true if Shadowbox is currently paused.
@@ -374,7 +374,7 @@ S.isOpen = function() {
  */
 S.isPaused = function() {
     return slideTimer == "pause";
-}
+};
 
 /**
  * Applies the given set of options to Shadowbox' options. May be undone with revertOptions().
@@ -385,7 +385,7 @@ S.isPaused = function() {
 S.applyOptions = function(options) {
     lastOptions = apply({}, S.options);
     apply(S.options, options);
-}
+};
 
 /**
  * Reverts to whatever the options were before applyOptions() was called.
@@ -394,7 +394,7 @@ S.applyOptions = function(options) {
  */
 S.revertOptions = function() {
     apply(S.options, lastOptions);
-}
+};
 
 /**
  * Initializes the Shadowbox environment. If options are given here, they
@@ -434,7 +434,7 @@ S.init = function(options, callback) {
         S.onReady = callback;
 
     bindLoad();
-}
+};
 
 /**
  * Opens the given object in Shadowbox. This object may be any of the following:
@@ -479,7 +479,7 @@ S.open = function(obj) {
 
         S.skin.onOpen(obj, load);
     }
-}
+};
 
 /**
  * Closes Shadowbox.
@@ -510,7 +510,7 @@ S.close = function() {
     S.skin.onClose();
 
     S.revertOptions();
-}
+};
 
 /**
  * Starts a slideshow when a gallery is being displayed. Is called automatically
@@ -535,7 +535,7 @@ S.play = function() {
         if(S.skin.onPlay)
             S.skin.onPlay();
     }
-}
+};
 
 /**
  * Pauses a slideshow on the current object.
@@ -556,7 +556,7 @@ S.pause = function() {
         if(S.skin.onPause)
             S.skin.onPause();
     }
-}
+};
 
 /**
  * Changes Shadowbox to display the item in the gallery specified by index.
@@ -586,7 +586,7 @@ S.change = function(index) {
     S.options.onChange(S.getCurrent());
 
     load(true);
-}
+};
 
 /**
  * Advances to the next item in the gallery.
@@ -595,7 +595,7 @@ S.change = function(index) {
  */
 S.next = function() {
     S.change(S.current + 1);
-}
+};
 
 /**
  * Rewinds to the previous gallery item.
@@ -604,7 +604,7 @@ S.next = function() {
  */
 S.previous = function() {
     S.change(S.current - 1);
-}
+};
 
 /**
  * Calculates the dimensions for Shadowbox.
@@ -660,7 +660,7 @@ S.setDimensions = function(height, width, maxHeight, maxWidth, topBottom, leftRi
     };
 
     return S.dimensions;
-}
+};
 
 /**
  * Returns an array with two elements. The first is an array of objects that
@@ -727,7 +727,7 @@ S.makeGallery = function(obj) {
     });
 
     return [gallery, current];
-}
+};
 
 /**
  * Extracts parameters from a link element and returns an object containing
@@ -795,7 +795,7 @@ S.makeObject = function(link, options) {
     }
 
     return obj;
-}
+};
 
 /**
  * Attempts to automatically determine the correct player to use for an object based
@@ -839,7 +839,7 @@ S.getPlayer = function(content) {
     }
 
     return "iframe";
-}
+};
 
 /**
  * Filters the current gallery for unsupported objects.
@@ -851,7 +851,7 @@ function filterGallery() {
         m, format, replace, inlineEl, flashVersion;
 
     for (var i = 0; i < S.gallery.length; ++i) {
-        obj = S.gallery[i]
+        obj = S.gallery[i];
 
         remove = false; // remove the object?
         needed = null; // what plugins are needed?

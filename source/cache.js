@@ -65,7 +65,7 @@ S.select = function(selector) {
     }
 
     return links;
-}
+};
 
 /**
  * Adds all links specified by the given selector to the cache. If no selector
@@ -83,7 +83,7 @@ S.setup = function(selector, options) {
     each(S.select(selector), function(i, link) {
         S.addCache(link, options);
     });
-}
+};
 
 /**
  * Removes all links specified by the given selector from the cache.
@@ -95,7 +95,7 @@ S.teardown = function(selector) {
     each(S.select(selector), function(i, link) {
         S.removeCache(link);
     });
-}
+};
 
 /**
  * Adds the given link element to the cache with the given options.
@@ -116,7 +116,7 @@ S.addCache = function(link, options) {
     }
 
     S.cache[key] = S.makeObject(link, options);
-}
+};
 
 /**
  * Removes the given link element from the cache.
@@ -128,7 +128,7 @@ S.removeCache = function(link) {
     removeEvent(link, "click", handleClick);
     delete S.cache[link[expando]];
     link[expando] = null;
-}
+};
 
 /**
  * Gets the object from cache representative of the given link element (if there is one).
@@ -140,7 +140,7 @@ S.removeCache = function(link) {
 S.getCache = function(link) {
     var key = link[expando];
     return (key in S.cache && S.cache[key]);
-}
+};
 
 /**
  * Removes all onclick listeners from elements that have previously been setup with
@@ -153,7 +153,7 @@ S.clearCache = function() {
         S.removeCache(S.cache[key].link);
 
     S.cache = {};
-}
+};
 
 /**
  * Handles all clicks on links that have been set up to work with Shadowbox

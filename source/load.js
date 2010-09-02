@@ -20,14 +20,14 @@ if (document.addEventListener) {
     DOMContentLoaded = function() {
         document.removeEventListener("DOMContentLoaded", DOMContentLoaded, false);
         S.load();
-    }
+    };
 } else if (document.attachEvent) {
     DOMContentLoaded = function() {
         if (document.readyState === "complete") {
             document.detachEvent("onreadystatechange", DOMContentLoaded);
             S.load();
         }
-    }
+    };
 }
 
 /**
@@ -99,4 +99,4 @@ S.load = function() {
         S.setup();
 
     S.skin.init();
-}
+};

@@ -113,21 +113,21 @@ addEvent.handleEvent = function(event) {
     }
 
     return result;
-}
+};
 
 addEvent.preventDefault = function() {
     this.returnValue = false;
-}
+};
 
 addEvent.stopPropagation = function() {
     this.cancelBubble = true;
-}
+};
 
 addEvent.fixEvent = function(e) {
     e.preventDefault = addEvent.preventDefault;
     e.stopPropagation = addEvent.stopPropagation;
     return e;
-}
+};
 
 /**
  * Removes an event handler from the given element.

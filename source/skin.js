@@ -191,7 +191,7 @@ function toggleLoading(on, callback) {
             S.clearOpacity(loading);
             if (callback)
                 callback();
-        }
+        };
 
         if (anim) {
             animate(loading, "opacity", 1, S.options.fadeDuration, wrapped);
@@ -204,7 +204,7 @@ function toggleLoading(on, callback) {
             S.clearOpacity(loading);
             if (callback)
                 callback();
-        }
+        };
 
         if (anim) {
             animate(loading, "opacity", 0, S.options.fadeDuration, wrapped);
@@ -275,7 +275,7 @@ function buildBars(callback) {
             while (i != end) {
                 if (i == len)
                     i = 0;
-                counter += '<a onclick="Shadowbox.change(' + i + ');"'
+                counter += '<a onclick="Shadowbox.change(' + i + ');"';
                 if (i == S.current)
                     counter += ' class="sb-counter-current"';
                 counter += ">" + (++i) + "</a>";
@@ -596,7 +596,7 @@ K.init = function() {
         if (open)
             timer = setTimeout(K.onWindowResize, 10);
     });
-}
+};
 
 /**
  * Called when Shadowbox opens.
@@ -640,7 +640,7 @@ K.onOpen = function(obj, callback) {
     } else {
         callback();
     }
-}
+};
 
 /**
  * Called when a new object is being loaded.
@@ -666,7 +666,7 @@ K.onLoad = function(changing, callback) {
 
         buildBars(callback);
     });
-}
+};
 
 /**
  * Called when the content is ready to be loaded (e.g. when the image has finished
@@ -684,7 +684,7 @@ K.onReady = function(callback) {
 
     var wrapped = function() {
         showBars(callback);
-    }
+    };
 
     switch (S.options.animSequence) {
     case "hw":
@@ -701,7 +701,7 @@ K.onReady = function(callback) {
         adjustWidth(dims.width, dims.left, true);
         adjustHeight(dims.innerHeight, dims.top, true, wrapped);
     }
-}
+};
 
 /**
  * Called when the content is loaded into the box and is ready to be displayed.
@@ -714,7 +714,7 @@ K.onShow = function(callback) {
 
     // re-enable window resize events
     doWindowResize = true;
-}
+};
 
 /**
  * Called in Shadowbox.close.
@@ -733,14 +733,14 @@ K.onClose = function() {
         container.style.visibility = "hidden";
         container.style.display = "none";
         toggleTroubleElements(true);
-    }
+    };
 
     if (overlayOn) {
         animate(overlay, "opacity", 0, S.options.fadeDuration, callback);
     } else {
         callback();
     }
-}
+};
 
 /**
  * Called in Shadowbox.play.
@@ -750,7 +750,7 @@ K.onClose = function() {
 K.onPlay = function() {
     toggleNav("play", false);
     toggleNav("pause", true);
-}
+};
 
 /**
  * Called in Shadowbox.pause.
@@ -760,7 +760,7 @@ K.onPlay = function() {
 K.onPause = function() {
     toggleNav("pause", false);
     toggleNav("play", true);
-}
+};
 
 /**
  * Called when the window is resized.
@@ -782,6 +782,6 @@ K.onWindowResize = function() {
 
     if (player.onWindowResize)
         player.onWindowResize();
-}
+};
 
 S.skin = K;

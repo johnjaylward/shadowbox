@@ -8,4 +8,4 @@ window.onload = function() {
         height: 300,
         width: 300
     });
-}
+};

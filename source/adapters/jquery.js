@@ -100,4 +100,4 @@ jQuery.fn.shadowbox = function(options) {
         opts.height = parseInt((cls.match(/h:(\d+)/)||[])[1]) || opts.height;
         Shadowbox.setup(el, opts);
     });
-}
+};

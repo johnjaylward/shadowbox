@@ -195,9 +195,9 @@ S.img = function(obj, id) {
         // clean up to prevent memory leak in IE
         pre.onload = null;
         pre = null;
-    }
+    };
     pre.src = obj.content;
-}
+};
 
 S.img.ext = ["bmp", "gif", "jpg", "jpeg", "png"];
 
@@ -296,4 +296,4 @@ S.img.prototype = {
         }
     }
 
-}
+};
